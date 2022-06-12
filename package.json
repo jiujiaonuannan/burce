@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "start": "babel-node src/index.js"
+    "start": "nodemon -x babel-node src/index.js"
   },
   "dependencies": {
     "@yangzw/bruce-us": "1.0.3"
@@ -12,11 +12,27 @@
     "@babel/cli": "7.17.10",
     "@babel/core": "7.18.2",
     "@babel/node": "7.17.10",
-    "@babel/preset-env": "7.18.2"
+    "@babel/preset-env": "7.18.2",
+    "nodemon": "^2.0.16"
   },
   "babel": {
     "presets": [
       "@babel/preset-env"
+    ]
+  },
+  "nodemonConfig": {
+    "env": {
+      "NODE_ENV": "dev"
+    },
+    "execMap": {
+      "js": "node --harmony"
+    },
+    "ext": "js json",
+    "ignore": [
+      "dist/"
+    ],
+    "watch": [
+      "src/"
     ]
   }
 }
